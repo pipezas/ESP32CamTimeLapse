@@ -565,11 +565,11 @@ document.addEventListener('DOMContentLoaded', function (event)
     if (updateRemote && initialValue !== value) {
       updateConfig(el);
     } else if(!updateRemote)
-	{
+  {
       if(el.id === "aec"){
         value ? hide(exposure) : show(exposure)
       } else if(el.id === "agc")
-	  {
+    {
         if (value) {
           show(gainCeiling)
           hide(agcGain)
@@ -590,18 +590,18 @@ document.addEventListener('DOMContentLoaded', function (event)
         value = el.checked ? 1 : 0
         break
       case 'range':
-      	break
+        value = el.value
       case 'select-one':
         value = el.value
         break
       case 'button':
-      	break
+        break
       case 'submit':
         value = '1'
         break
       case 'number':
-      	value = el.value
-	break
+        value = el.value
+  break
       default:
         return
     }
@@ -625,11 +625,11 @@ document.addEventListener('DOMContentLoaded', function (event)
   // read initial values
   fetch(`${baseHost}/status`)
     .then(function (response) 
-	{
+  {
       return response.json()
     })
     .then(function (state) 
-	{
+  {
       document
         .querySelectorAll('.default-action')
         .forEach(el => {
@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', function (event)
     } else {
       startLapse()
     }
-	//updateConfig(lapseButton)
+  //updateConfig(lapseButton)
   }
 
   // Attach default on change action
